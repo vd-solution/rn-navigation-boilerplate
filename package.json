@@ -1,0 +1,55 @@
+{
+  "name": "RNNBoilerplate",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.11.0",
+    "react": "16.11.0",
+    "react-native": "0.62.2",
+    "react-native-config": "^1.2.1",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-navigation": "^6.7.1",
+    "react-native-navigation-hooks": "^6.0.2",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.5.1",
+    "husky": "^4.2.5",
+    "jest": "^24.9.0",
+    "lint-staged": "^10.2.9",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "prettier": "^2.0.5",
+    "react-native-rename": "^2.4.1",
+    "react-test-renderer": "16.11.0",
+    "redux-logger": "^3.0.6"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
